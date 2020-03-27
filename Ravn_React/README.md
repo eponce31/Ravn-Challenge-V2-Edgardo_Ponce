@@ -1,14 +1,8 @@
-# eponce31
+# React App 
 
 Single-page app that allows to search for all human characters in Star Wars saga.
 Create by Edgardo Ponce Escobedo
 email: eponce24@gmail.com
-
-Platforms
-============
-
-	- React: Ravn_React folder
-	- React native: Ravn_React folder
 
 	Use the Apollo GraphQL client
 
