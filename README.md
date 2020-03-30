@@ -37,18 +37,18 @@ Show detail information about selected Star Wars character: - Name - Eye Color -
 
 ## React
 
-[![react first screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/react/screen_1)]
-[![react second screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/react/screen_2)]
+[![react first screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/blob/master/ScreenShots/react/screen_1.png)]
+[![react second screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/blob/master/ScreenShots/react/screen_2.png)]
 
 ## React Native
 
-[![react-native first screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/react-native/screen_1)]
-[![react-native second screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/react-native/screen_2)]
+[![react-native first screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/blob/master/ScreenShots/react-native/screen_1.png)]
+[![react-native second screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/blob/master/ScreenShots/react-native/screen_2.png)]
 
 ## Kotlin
 
-[![react-native first screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/kotlin/screen_1)]
-[![react-native second screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/kotlin/screen_2)]
+[![react-native first screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/blob/master/ScreenShots/kotlin/screen_1.png)]
+[![react-native second screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/blob/master/ScreenShots/kotlin/screen_2.png)]
 
 ## React Development
 
@@ -211,9 +211,6 @@ I. DOWNLOADING SCHEMA FILE
 
     	npx apollo help client
 
-
-
-
 II. GENERATE APOLLO SOURCES
 
     $ gradlew generateApolloSources
@@ -240,7 +237,6 @@ II. GENERATE APOLLO SOURCES
     				}
     			}
     		}
-
 
 III. ANDROID QueryBuilder
 
