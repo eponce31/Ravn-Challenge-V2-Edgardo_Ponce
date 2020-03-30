@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ravn</string>
+
+    <string name="str_people_star_wars">People of Star Wars</string>
+    <string name="str_people">People</string>
+
+    <string name="str_from">from</string>
+
+</resources>

@@ -1,0 +1,12 @@
+query GetAllPersonsQuery {
+  allPersons {
+    id
+    name
+    species {
+      name
+    }
+    homeworld {
+      name
+    }
+  }
+}

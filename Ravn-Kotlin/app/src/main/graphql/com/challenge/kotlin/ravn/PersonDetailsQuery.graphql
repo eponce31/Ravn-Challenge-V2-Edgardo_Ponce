@@ -1,0 +1,14 @@
+query PersonDetailsQuery($personId: ID!) {
+  Person(id: $personId) {
+    id
+    name
+    eyeColor
+    hairColor
+    skinColor
+    birthYear
+    vehicles {
+      id
+      name
+    }
+  }
+}

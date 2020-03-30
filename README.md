@@ -6,8 +6,11 @@ email: eponce24@gmail.com
 
 # Platforms
 
-    - React: Ravn_React folder
-    - React native: Ravn_React folder
+| Platform     | Folder                  |
+| ------------ | ----------------------- |
+| React        | Ravn_React              |
+| React native | Ravn-React-Native       |
+| Kotlin       | Kotlin_GraphQL_StarWars |
 
     Use the Apollo GraphQL client
 
@@ -21,26 +24,31 @@ email: eponce24@gmail.com
 
 - [@eponce31](https://github.com/eponce31) (Edgardo Ponce)
 
-## Screens
+# Screens
 
-# First Screen
+## FirstScreen
 
     Show all Star Wars characters list
     Click on the character name to show Details Screen
 
-https://imgur.com/FfbvpEt
+## SecondScreen
 
-# Second Screen
+Show detail information about selected Star Wars character: - Name - Eye Color - Hair Color - Skin Color - Date Of Birth - List of Vehicles
 
-    Show detail information about selected Star Wars character:
-    - Name
-    - Eye Color
-    - Hair Color
-    - Skin Color
-    - Date Of Birth
-    - List of Vehicles
+## React
 
-    https://imgur.com/2N87uPU
+[![react first screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/react/screen_1)]
+[![react second screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/react/screen_2)]
+
+## React Native
+
+[![react-native first screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/react-native/screen_1)]
+[![react-native second screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/react-native/screen_2)]
+
+## Kotlin
+
+[![react-native first screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/kotlin/screen_1)]
+[![react-native second screen](https://github.com/eponce31/Ravn-Challenge-V2-Edgardo_Ponce/ScreenShots/kotlin/screen_2)]
 
 ## React Development
 
@@ -134,16 +142,12 @@ PersonsScreen: { screen: PersonsScreen },
 PersonDetailScreen: { screen: PersonDetailScreen },
 });
 
-https://imgur.com/a/e7ZwB3Z
-
 # SecondScreen
 
 const MainNavigator = createStackNavigator({
 PersonDetailScreen: { screen: PersonDetailScreen },
 PersonsScreen: { screen: PersonsScreen },
 });
-
-https://imgur.com/a/HLg7jBU
 
 ---
 
@@ -152,3 +156,114 @@ https://imgur.com/a/HLg7jBU
     https://www.apollographql.com/docs/react/get-started/
 
     https://www.howtographql.com/
+
+# Kotlin
+
+## Tools
+
+Android Studio 3.6.1
+
+## Main References
+
+https://www.apollographql.com/docs/android/essentials/get-started/
+
+https://www.stevetrefethen.com/blog/working-with-apollo-cli
+
+https://blog.apollographql.com/launching-apollo-graphql-on-android-40ee0b5789bd
+
+## Kotlin Shortcomings
+
+I. DOWNLOADING SCHEMA FILE
+
+    1. 	Error schema donwloaded fom endpoint
+    	===================================
+
+
+    	1.1. Schema:download generates incompatible schema JSON
+
+    		gradlew generateApolloSources --stacktrace
+
+    		schema:download generates incompatible schema JSON
+    		https://github.com/apollographql/apollo-tooling/issues/555
+
+    		09:39:22.931 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] Caused by: java.lang.IllegalArgumentException: Failed to locate schema root node `__schema`
+    		09:39:22.931 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter]   at com.apollographql.apollo.compiler.parser.Schema$Companion.locateSchemaRootNode(Schema.kt:172)
+    		09:39:22.931 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter]   at com.apollographql.apollo.compiler.parser.Schema$Companion.parse(Schema.kt:148)
+
+    	1.2. Caused by: com.squareup.moshi.JsonDataException: Required property 'types_' missing at $.__schema
+
+    2.  Downloading schema.json from schema defined by SDL
+    	https://github.com/apollographql/apollo-ios/issues/660
+
+    	I would say your question about SDL format support is probably a better one for the apollo-tooling
+
+    3. Solution: Use Apollo-tooling
+
+    	https://github.com/apollographql/apollo-tooling
+    	https://www.apollographql.com/docs/devtools/cli/
+
+
+    	mkdir apollo_cli_src
+
+    	cd apollo_cli_src
+
+    	npm install -D apollo
+
+    	npx apollo help client
+
+
+
+
+II. GENERATE APOLLO SOURCES
+
+    $ gradlew generateApolloSources
+
+    1. Problem with unamed queries
+
+    	org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:generateDebugServiceApolloSources'.
+
+    	   [1]:{
+    	   [2]:    allPersons {
+
+    2. Solution: change query
+
+     	   query GetAllPersonsQuery
+    		{
+    			allPersons {
+    				id
+    				name
+    				species {
+    					name
+    				}
+    				homeworld {
+    					name
+    				}
+    			}
+    		}
+
+
+III. ANDROID QueryBuilder
+
+    1. Problem: Query class does not have a .builder() method
+
+    Query class does not have a .builder() method.
+
+    It was described by @itarato and closed
+    https://github.com/apollographql/apollo-android/issues/1866
+
+    But the error is not resolved.
+
+    2. Solution: Use graddle apollo porperty generateModelBuilder = true
+
+    After try several solutions and read documentation I discovered that documentation needs to be fixed
+    https://github.com/apollographql/apollo-android/blob/master/README.md
+
+    // Replace:
+    apollo {
+    	generateKotlinModels.set(true)
+    }
+
+    // With:
+    apollo {
+    	generateModelBuilder = true
+    }
