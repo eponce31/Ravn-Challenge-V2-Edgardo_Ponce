@@ -1,0 +1,44 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Android",
+      "cwd": "${workspaceRoot}/.vscode/launchReactNative.js",
+      "type": "reactnative",
+      "request": "launch",
+      "platform": "android",
+      "sourceMaps": true,
+      "outDir": "${workspaceRoot}/.vscode/.react"
+    },
+    {
+      "name": "Debug iOS",
+      "cwd": "${workspaceRoot}/.vscode/launchReactNative.js",
+      "type": "reactnative",
+      "request": "launch",
+      "platform": "ios",
+      "sourceMaps": true,
+      "outDir": "${workspaceRoot}/.vscode/.react"
+    },
+    {
+      "name": "Attach to packager",
+      "cwd": "${workspaceRoot}/.vscode/launchReactNative.js",
+      "type": "reactnative",
+      "request": "attach",
+      "port": 19006, // change this with your port
+      "sourceMaps": true,
+      "outDir": "${workspaceRoot}/.vscode/.react"
+    },
+    {
+      "name": "Debug in Exponent",
+      "cwd": "${workspaceRoot}/.vscode/launchReactNative.js",
+      "type": "reactnative",
+      "request": "launch",
+      "platform": "exponent",
+      "sourceMaps": true,
+      "outDir": "${workspaceRoot}/.vscode/.react"
+    }
+  ]
+}
